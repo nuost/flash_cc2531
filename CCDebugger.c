@@ -208,6 +208,8 @@ void cc_delay_calibrate( )
   cc_delay(200);
   long time1=micros();
   cc_delay_mult=cc_delay_mult*600/(time1-time0);
+  /* https://github.com/jmichault/flash_cc2531/issues/9#issuecomment-557753946 */
+  cc_delay_mult=80;
 }
 
 /**
